@@ -7,7 +7,7 @@ https://www.color-hex.com/color-palette/83132
 #9f70d0	(159,112,208) */
 
 * {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Varela Round";
 }
 
 body {
@@ -33,16 +33,16 @@ body {
   font-size: 1rem;
   height: 40px;
   width: 120px;
-  color: rgba(159, 112, 208, 1);
+  color: #e94560;
   transition: color 0.3s;
   transition: background-color 0.3s;
 }
 
 .btn:hover {
-  border: 1px solid rgba(159, 112, 208, 1);
+  border: 1px solid #e94560;
   font-size: 1rem;
   color: #fff;
-  background-color: rgba(159, 112, 208, 1);
+  background-color: #e94560;
 }
 
 #submit-button {
@@ -61,11 +61,12 @@ h1 {
 h1,
 h2,
 h3,
-p,
 a {
-  color: rgba(159, 112, 208, 1);
+  color: #e94560;
 }
-
+p {
+  color: #2b2b2b;
+}
 #submit {
   display: none;
   position: absolute;
@@ -87,7 +88,7 @@ a {
   left: 25%;
   background: rgba(255, 255, 255, 1);
   border: 1px solid;
-  border-color: rgba(159, 112, 208, 1);
+  border-color: #e94560);
 }
 
 #name {
@@ -95,14 +96,14 @@ a {
   padding: 1rem;
   outline: none;
   height: 2rem;
-  border: 1px solid rgba(159, 112, 208, 1);
+  border: 1px solid #e94560;
   border-radius: 4px;
   font-size: 1rem;
-  color: #43aea6;
+  color: #e94560;
 }
 
 ::placeholder {
-  color: #43aea6;
+  color: #e94560;
   opacity: 0.5; /* Firefox */
 }
 
@@ -116,7 +117,7 @@ a {
 li {
   text-align: left;
   counter-increment: li;
-  color: #43aea6;
+  color: #e94560;
 }
 
 li:before {
@@ -124,27 +125,27 @@ li:before {
   display: inline-block;
   width: 0.5em;
   margin-right: 1rem;
-  color: rgba(159, 112, 208, 1);
+  color: #e94560;
 }
 
 .score {
   float: right;
-  color: #ff9a00;
+  color: #e94560;
 }
 
 #submit-score {
-  color: #ff9a00;
+  color: #e94560;
 }
 
 a {
   background-color: #fff;
-  color: #ff9a00;
+  color: #e94560;
   padding: 2px;
   transition: color 0.5s;
 }
 a:hover {
   color: #fff;
-  background-color: #ff9a00;
+  background-color: #e94560;
   text-decoration: none;
 }
 
@@ -153,5 +154,5 @@ a:hover {
   /* padding: 0.5rem 0; */
   padding: 0.3rem 0;
   margin: 1.5rem auto;
-  border: 1px solid rgba(159, 112, 208, 1);
+  border: 1px solid #e94560;
 }

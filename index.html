@@ -8,17 +8,6 @@
       rel="stylesheet"
     />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102358307-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-102358307-1');
-    </script>
-
-
     <!-- favicon -->
     <link
       rel="icon"
@@ -37,39 +26,35 @@
   </head>
 
   <body>
+    <img src="assets/vinuni-logo.png" alt="logo" style="width: 200px; margin: 50px; position: absolute; left: 0; top: 0">
+    <img src="assets/Original.png" alt="logo" style="width: 250px; margin: 50px; position: absolute; right: 0; top: 0">
     <h1>Whack a Mole</h1>
 
+    <p style="font-size: 20px;">
+      Play whack a mole with your 👃
+    </p>
+
     <p>
-      Play whack a mole with your nose👃, powered by
+      Powered by
       <a
         href="https://github.com/tensorflow/tfjs-models/tree/master/posenet"
         target="_blank"
       >
         PoseNet</a
-      >.
+      >, Đùi gà, and a whole lot of Redbull.
     </p>
     <div id="p5-canvas">
       <button class="btn" id="play-btn">loading</button>
       <div id="submit">
         <div>
-          <h2>Submit Score</h2>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            minlength="2"
-            maxlength="40"
-            size="15"
-            placeholder="name"
-          />
+          <h2>Your Score</h2>
+          
         </div>
         <h2><span id="submit-score">5</span></h2>
-        <button class="btn" id="submit-button">Send</button>
-        <button class="btn" id="nope-button">Nope</button>
+        <button class="btn" id="submit-button" style="display: none;">Send</button>
+        <button class="btn" id="nope-button">Next</button>
       </div>
       <div id="leaders">
-        <h2>Top Players</h2>
         <ol id="leaders-ol"></ol>
         <button class="btn" id="play-again-button">Play Again</button>
       </div>
@@ -77,8 +62,8 @@
 
     <h3 id="score">score: 0</h3>
     <p>
-      <a href="https://vibertthio.com/" target="_blank"
-        >vibertthio.com</a
+      <a href="https://vinmaker.vn/" target="_blank"
+        >vinmaker.vn</a
       >
     </p>
     <script src="sketch.js"></script>

@@ -15,7 +15,7 @@ let animationPosition = { x: 50, y: 50 };
 
 let nose = { x: -1000, y: -1000 };
 let minRadius = 13;
-let targetRadius = 60;
+let targetRadius = 100;
 let radiusDecayRate = 0.97;
 
 let minLimit = 1000;
@@ -93,7 +93,6 @@ StartAudioContext(Tone.context, "#play-btn").then(() => {
 });
 
 function setup() {
-  getRecords();
   target = { x: 0, y: 0 };
 
   const canvas = createCanvas(640, 480);
@@ -128,7 +127,7 @@ function draw() {
   scale(-1, 1);
 
   image(video, 0, 0, width, height);
-  fill(255, 255, 255, 200);
+  fill(255, 255, 255, 100);
   rect(-1, -1, width + 2, height + 2);
 
   if (gameState === 1) {
@@ -137,7 +136,7 @@ function draw() {
     drawTiming();
     check();
   } else {
-    fill(67, 174, 166, 200);
+    fill(233, 69, 96, 200);
     rect(-1, -1, width + 2, height + 2);
   }
 }
@@ -181,7 +180,7 @@ function resetTarget() {
 function drawTarget() {
   push();
 
-  stroke(159, 112, 208);
+  stroke(	255, 181, 33);
   strokeWeight(4);
   noFill();
   translate(target.x, target.y);
@@ -243,7 +242,7 @@ function drawTiming() {
   endShape(CLOSE);
   pop();
 
-  stroke(67, 174, 112);
+  stroke(43, 43, 43);
   // stroke(255, 255, 255);
   strokeWeight(4);
   noFill();
@@ -277,9 +276,9 @@ function updateScore(s) {
 function drawNose() {
   if (poses.length > 0) {
     nose = poses[0].pose.keypoints[0].position;
-    fill(255, 154, 0);
+    fill(	233, 69, 96);
     noStroke();
-    ellipse(nose.x, nose.y, 15, 15);
+    triangle(nose.x-15, nose.y, nose.x + 15, nose.y, nose.x, nose.y + 15);
   }
 }
 
@@ -314,24 +313,3 @@ function drawSkeleton() {
   }
 }
 
-// api
-
-async function getRecords() {
-  const response = await fetch("https://whack-mole.glitch.me/leaders");
-  records = await response.json();
-  updateLeaders();
-}
-
-function updateLeaders() {
-  const ol = document.getElementById("leaders-ol");
-  // clear children
-  while (ol.firstChild) {
-    ol.removeChild(ol.firstChild);
-  }
-
-  records.forEach(record => {
-    const li = document.createElement("li");
-    ol.appendChild(li);
-    li.innerHTML = `${record.name} <span class="score">${record.score}</span>`;
-  });
-}
